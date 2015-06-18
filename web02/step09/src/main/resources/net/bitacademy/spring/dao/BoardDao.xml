@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.bitacademy.spring.dao.BoardDao">
+  <resultMap type="Board" id="BoardMap">
+    <id column="bno" property="no"/>
+    <result column="title" property="title"/>
+    <result column="content" property="content"/>
+    <result column="cre_dt" property="createDate"/>
+    <result column="views" property="views"/>
+  </resultMap>
+
+
+	<select id="selectList" resultMap="BoardMap">
+	   select bno, title, cre_dt, views
+	   from board
+	   order by bno desc
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultMap="BoardMap">
+	   select bno, title, content, cre_dt, views
+	   from board
+	   where bno=#{value}
+	</select>
+	
+	<insert id="insert" parameterType="Board">
+	   insert into board(title,content,cre_dt) 
+	   values(#{title},#{content},now())
+	</insert>
+	
+	<update id="update" parameterType="Board">
+	   update board set 
+	     title=#{title}, 
+	     content=#{content} 
+	   where bno=#{no}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+	   delete from board 
+	   where bno=#{value}
+	</delete>
+</mapper>
+
+
+
+
