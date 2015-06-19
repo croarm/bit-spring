@@ -27,3 +27,9 @@ CREATE TABLE board_log (
   cre_dt datetime NOT NULL,
   PRIMARY KEY (blno)
 )
+
+
+
+alter table board
+	add column filepath VARCHAR(255) NULL;
+

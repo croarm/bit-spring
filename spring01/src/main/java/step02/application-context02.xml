@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- value 속성을 이용하여 값 설정하기 -->
+    <bean id="c1" class="step02.Car">
+    	<constructor-arg value="티코"/>
+    </bean>
+    
+    <bean id="c2" class="step02.Car">
+    	<constructor-arg value="5"/>
+    </bean>
+  
+    <bean id="c3" class="step02.Car">
+    	<constructor-arg type="int" value="5"/>
+    </bean>
+    
+    <bean id="c4" class="step02.Car">
+    	<constructor-arg value="티코"/>
+    	<constructor-arg value="5"/>
+    </bean>
+    
+    <bean id="c5" class="step02.Car">
+    	<constructor-arg type="java.lang.String" index="0" value="555"/>
+    	<constructor-arg type="int" index="1" value="5"/>
+    </bean>
+    
+    <!--  -->
+    <bean id="c7" class="step02.Car">
+    	<constructor-arg> <value >5</value>
+    	</constructor-arg>
+    	<constructor-arg> <value >655</value>
+    	</constructor-arg>
+    </bean>
+    
+    <!--  -->
+    <bean id="c8" class="step02.Car">
+    	<constructor-arg type="java.lang.String"> <value >5</value>
+    	</constructor-arg>
+    	<constructor-arg type="int"> <value >655</value>
+    	</constructor-arg>
+    </bean>
+    
+    <!--  -->
+    <bean id="c9" class="step02.Car">
+    	<constructor-arg type="java.lang.String" index="0"> <value >5</value>
+    	</constructor-arg>
+    	<constructor-arg type="int" index="1"> <value >655</value>
+    	</constructor-arg>
+    </bean>
+</beans>
+
+
+
+
+

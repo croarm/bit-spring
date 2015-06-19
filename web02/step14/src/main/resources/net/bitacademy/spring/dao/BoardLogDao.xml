@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.bitacademy.spring.dao.BoardLogDao">
+  <resultMap type="BoardLog" id="BoardLogMap">
+    <id     column="blno"           property="no"/>
+    <result column="bno"            property="boardNo"/>
+    <result column="ipaddr"         property="ipAddress"/>
+    <result column="command"        property="command"/>
+    <result column="cre_dt"         property="createDate"/>
+  </resultMap>
+
+	<insert id="insert" parameterType="BoardLog">
+	   insert into board_log(bno,ipaddr,command,cre_dt) 
+	   values(#{boardNo},#{ipAddress},#{command},now())
+	</insert>
+	
+</mapper>
+
+
+
+

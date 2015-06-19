@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- 셋터 호출 -->
+    <bean id="c1" class="step02.Car">
+    	<property name="model"><value>티코</value></property>
+    	<property name="capacity"><value>5</value></property>
+    </bean>
+    
+    <bean id="c2" class="step02.Car">
+    	<property name="model"><value type="java.lang.String">55</value></property>
+    	<property name="capacity"><value type="int">5</value></property>
+    </bean>
+    
+    <bean id="c3" class="step02.Car">
+    	<property name="model" value="티코"/>
+    	<property name="capacity" value="5"/>
+    </bean>
+    <!-- c3->java code 
+    	Car c3 = new Car();
+    	c3.setModel("티코");
+    	c3.setCapacity(5);    	
+    -->
+    
+    
+    
+    <bean id="c4" class="step02.Car" p:model="티코" p:capacity="5" />
+    
+    
+    
+        
+</beans>
+
+
+
+
+

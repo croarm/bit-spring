@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- -->
+    <bean id="c1" class="step03.Car">
+    	<property name="model" value="티코"/>
+    	<property name="capacity" value="5"/>
+    	<property name="engine" ref="engine1"/>
+    </bean>
+    
+    <bean id="c2" class="step03.Car">
+    	<property name="model" value="소나타"/>
+    	<property name="capacity" value="5"/>
+    	<property name="engine" ref="engine1"/>
+    </bean>
+    
+    <bean id="engine1" class="step03.Engine">
+    	<property name="maker" value="현대" />
+    	<property name="valve" value="16" />
+    </bean>
+    
+</beans>
+
+
+
+
+

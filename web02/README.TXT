@@ -72,5 +72,25 @@ page controller(plain old java object)
  	tx:advice, aop:config 
  => service 클래스에 @Transactional 애노테이션을 제거한다.
  
- 
+ [step14]
+ => board 테이블에 filepath 컬럼 추가
+ => application-context.xml 파일에 multipart 요청 데이터를 ㅊ리하는 객체를 투입
+ => BoardController 클래스 변경
+ => Board 클래스 변경 sql 변경 ~
+ => BoardDao.xml 변경
+
+ [step15] - 프론트 컨트롤러가 공통으로 사용하는 객체를 분리하여 별도로 준비한다.
+ => ServletContextListener 구현체를 통해 공용 객체를 준비한다.
+ => ContextLoaderListener 를 web.cml 에 등록하낟.
+ => ContextLoaderListener 에서 준비할 개체 정보를 application-context.xml 에서 등록한다.
+ => 페이지 컨트롤러와 웹 관련 객체들은 dispatcher-servlet.xml에 등록한다.
+
+
+
+
+
+
+
+
+
  

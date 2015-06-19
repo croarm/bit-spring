@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- 생성자 파라미터를 가리키는 특별한 네임스페이스 'c' 사용하기 
+    	'c' 네임스페이스는 스키마 파일의 url 정보를 설정할 필요가 없다. -->
+    <!-- c:파라미터명 -->
+    <bean id="c1" class="step02.Car" c:model="티코"/>
+    
+    <bean id="c2" class="step02.Car" c:capacity="5"/>
+  
+    <bean id="c3" class="step02.Car" c:model="티코" c:capacity="5"/>
+    <!-- c:_인덱스 -->
+    <bean id="c4" class="step02.Car" c:_1="5" c:_0="티코"/>
+    
+</beans>
+
+
+
+
+
