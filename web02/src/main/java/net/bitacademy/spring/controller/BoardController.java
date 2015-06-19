@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BoardController {
   
   @Autowired BoardService boardService;
- 
+  
   @RequestMapping("/list") // web.xml에 설정한 확장자명 (.do)는 생략해도 된다
   public String list(Model model) throws Exception{
     
@@ -32,7 +32,6 @@ public class BoardController {
 
     return "redirect:list.do";
   }
-
   
   @RequestMapping(value="/change",method=RequestMethod.POST)
   public String change(Board board, HttpServletRequest request) throws Exception{
@@ -46,6 +45,7 @@ public class BoardController {
   public String remove(int no, HttpServletRequest request) throws Exception{
     
     boardService.remove(no, request.getRemoteAddr());
+    
     return "redirect:list.do";
   }
   

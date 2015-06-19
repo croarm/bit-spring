@@ -67,5 +67,10 @@ page controller(plain old java object)
  => /WEB-INF/config/application-context.xml 에 <tx:annotation-driven 
  
  [step13]
- 3) AOP 기술을 이용하여 처리
+ 3) AOP 기술을 이용하여 처리 //@ 대신 //특정 메서드 앞뒤로 필터를 
+ => application-context.xml 파일에 aop 관련 태그 추가.
+ 	tx:advice, aop:config 
+ => service 클래스에 @Transactional 애노테이션을 제거한다.
+ 
+ 
  

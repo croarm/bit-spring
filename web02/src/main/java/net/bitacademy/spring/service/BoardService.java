@@ -20,7 +20,6 @@ public class BoardService {
   @Autowired BoardLogDao boardLogDao;
   @Autowired PlatformTransactionManager txManager;
   
-  @Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
   public int add(Board board, String ip) throws Exception{
       int count = boardDao.insert(board);
       logAction(board.getNo(), ip, BoardLog.CMD_INSERT);
@@ -41,14 +40,12 @@ public class BoardService {
     
   }
   
-  @Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
   public int change(Board board, String ip) throws Exception{
     int count = boardDao.update(board);
     logAction(board.getNo(), ip, BoardLog.CMD_UPDATE);
     return count;
   }
 
-  @Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
   public int remove(int no, String ip) throws Exception{
     int count = boardDao.delete(no);
     logAction(no, ip, BoardLog.CMD_DELETE);

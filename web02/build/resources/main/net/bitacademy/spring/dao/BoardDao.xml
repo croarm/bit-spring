@@ -24,7 +24,8 @@
     where bno=#{value}
 	</select>
 
-	<insert id="insert" parameterType="Board">
+	<insert id="insert" parameterType="Board"
+		useGeneratedKeys="true" keyColumn="bno" keyProperty="no">
 		insert into board(title,content,cre_dt) 
 		values(#{title},#{content},now())
 	</insert>
